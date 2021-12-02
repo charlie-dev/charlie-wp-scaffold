@@ -1,7 +1,7 @@
 {
-    "name": "charlie/wp-scaffold",
+    "name": "charlie/wp-scaffolder",
     "description": "Scaffolding scripts for the Wordpress Theme using WP CLI and Bash",
-    "type": "composer-plugin",
+    "type": "wordpress-scaffolding-scripts",
     "license": "GNU V3",
     "autoload": {
         "psr-4": {
