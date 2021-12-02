@@ -1,5 +1,14 @@
 # Charlie WP Scaffolding
 
+## Getting the theme
+
+Currently some of these scripts are tied to the structure and configuration of the Charlie Base WordPress theme.
+You can locate that theme [here](https://github.com/charlie-dev/charlie-wp-theme).
+
+Or
+
+By running `gh repo clone charlie-dev/charlie-wp-theme .` to install into the current directory you are in. Omit the `.` at the end to generate a new folder.
+
 ## Configuration within theme.
 
 If your theme does not use composer, you will need to `composer init` within your active theme.
