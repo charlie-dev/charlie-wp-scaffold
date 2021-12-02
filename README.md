@@ -11,14 +11,12 @@ instruct composer to run scripts in this codebase in the proper order.
 "scripts": {
     "post-install-cmd": [
       "php -r \"shell_exec('cp -rf vendor/charlie/wp-scaffolder/scripts/. scripts/');\"",
-      "php -r \"copy('vendor/charlie/wp-scaffolder/.env', '.env');\"",
       "bash scripts/set-env.sh",
       "bash scripts/plugin-extraction.sh",
       "bash scripts/database.sh"
     ],
     "post-update-cmd": [
       "php -r \"shell_exec('cp -rf vendor/charlie/wp-scaffolder/scripts/. scripts/');\"",
-      "php -r \"copy('vendor/charlie/wp-scaffolder/.env', '.env');\"",
       "bash scripts/set-env.sh",
       "bash scripts/plugin-extraction.sh",
       "bash scripts/database.sh"
