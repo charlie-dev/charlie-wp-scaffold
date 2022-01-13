@@ -9,22 +9,22 @@ if [[ -s .env ]]; then
   export $(grep -v '^#' .env | xargs)
 fi
 
-if [[ ! -v THEME_NAME || -z "$THEME_NAME" ]]; then
+if [[ ! -v 'THEME_NAME' || -z "$THEME_NAME" ]]; then
   echo -e "\033[34mWhat is your theme folder name:\e[0m"
   read
   echo -e "THEME_NAME='$REPLY'" >> .env
 fi
 
-if [[ ! -v PLUGINS_DIR && ! -v EXTERNAL_INSTALL_DIR ]] || [[ -v PLUGINS_DIR && -z "$PLUGINS_DIR" && -v EXTERNAL_INSTALL_DIR && -z "$EXTERNAL_INSTALL_DIR" ]]; then
+if [[ ! -v 'PLUGINS_DIR' && ! -v 'EXTERNAL_INSTALL_DIR' ]] || [[ -v 'PLUGINS_DIR' && -z "$PLUGINS_DIR" && -v 'EXTERNAL_INSTALL_DIR' && -z "$EXTERNAL_INSTALL_DIR" ]]; then
   echo -e "\033[34mIs your theme (enter 1 or 2):\e[0m"
   echo -e "\033[34m(1) located within the wordpress install\e[0m"
   echo -e "\033[34m(2) in a seperate location:\e[0m"
   read
 
-  if [[ "$REPLY" == 1 && ! -v PLUGINS_DIR ]]; then
+  if [[ "$REPLY" == 1 && ! -v 'PLUGINS_DIR' ]]; then
     echo -e "PLUGINS_DIR='../../plugins'" >> .env
     echo -e "EXTERNAL_INSTALL_DIR=''" >> .env
-  elif [[ "$REPLY" == 2 && ! -v EXTERNAL_INSTALL_DIR ]]; then
+  elif [[ "$REPLY" == 2 && ! -v 'EXTERNAL_INSTALL_DIR' ]]; then
     echo -e "\033[34mProvide the path to where your wordpress install is:\e[0m"
     read
 
