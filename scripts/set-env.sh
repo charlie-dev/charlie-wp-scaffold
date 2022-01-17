@@ -21,10 +21,10 @@ if [[ -z "$PLUGINS_DIR" && -z "$EXTERNAL_INSTALL_DIR" ]]; then
   echo -e "\033[34m(2) in a seperate location:\e[0m"
   read
 
-  if [[ "$REPLY" == 1 ]] && [[ ! -v "$PLUGINS_DIR" ]]; then
+  if [[ "$REPLY" == 1 ]] && [[ ! -z "$PLUGINS_DIR" ]]; then
     echo -e "PLUGINS_DIR='../../plugins'" >> .env
     echo -e "EXTERNAL_INSTALL_DIR=''" >> .env
-  elif [[ "$REPLY" == 2 ]] && [[ ! -v "$EXTERNAL_INSTALL_DIR" ]]; then
+  elif [[ "$REPLY" == 2 ]] && [[ ! -z "$EXTERNAL_INSTALL_DIR" ]]; then
     echo -e "\033[34mProvide the path to where your wordpress install is:\e[0m"
     read
 
