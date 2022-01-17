@@ -33,7 +33,7 @@ if [[ $COMMAND_RUN == 'y' ]]; then
     set_theme () {
       hasThemeSet=`wp option get template 2>&1`
 
-      if [[ "$hasThemeSet" == *"twentytwenty"* && -v THEME_NAME ]]; then
+      if [[ "$hasThemeSet" == *"twentytwenty"* ]] && [[ -z "$THEME_NAME" ]]; then
         themeStylesheetSet=`wp option update stylesheet "${THEME_NAME//[[:space:]]/}" 2>&1`
         sleep 2
         themeSet=`wp option update template "${THEME_NAME//[[:space:]]/}" 2>&1`
