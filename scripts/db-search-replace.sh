@@ -8,7 +8,7 @@
 installPath='../../../'
 questionOptions=('Y', 'y', 'N', 'n')
 
-if [[ -v 'EXTERNAL_INSTALL_DIR' && ! -z "$EXTERNAL_INSTALL_DIR" ]]; then
+if [[ ! -z "$EXTERNAL_INSTALL_DIR" ]]; then
   installPath=$EXTERNAL_INSTALL_DIR
 fi
 

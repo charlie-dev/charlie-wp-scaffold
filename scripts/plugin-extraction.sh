@@ -24,7 +24,7 @@ WORKING_DIR="../../plugins"
 
 if [[ ! -z "$EXTERNAL_INSTALL_DIR" ]]; then
   WORKING_DIR=$(echo ${EXTERNAL_INSTALL_DIR}/wp-content/plugins | tr -d '\r')
-elif [[ -z "$PLUGINS_DIR" ]]  && [[ ! -z "$EXTERNAL_INSTALL_DIR" ]]; then
+elif [[ -z "$PLUGINS_DIR" ]] && [[ ! -z "$EXTERNAL_INSTALL_DIR" ]]; then
   WORKING_DIR=$(echo "$PLUGINS_DIR" | tr -d '\r')
 fi
 
