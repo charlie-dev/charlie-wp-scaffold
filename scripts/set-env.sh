@@ -12,7 +12,7 @@ fi
 if [[ -z "$THEME_NAME" ]]; then
   echo -e "\033[34mWhat is your theme folder name:\e[0m"
   read
-  echo -e "THEME_NAME='$REPLY'" >> .env
+  echo -e "\nTHEME_NAME='$REPLY'" >> .env
 fi
 
 if [[ -z "$PLUGINS_DIR" && -z "$EXTERNAL_INSTALL_DIR" ]]; then
