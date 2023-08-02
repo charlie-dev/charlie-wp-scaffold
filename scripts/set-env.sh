@@ -12,7 +12,7 @@ fi
 if [[ -z "$THEME_NAME" ]]; then
   echo -e "\033[34mWhat is your theme folder name:\e[0m"
   read
-  echo -e "THEME_NAME='$REPLY'" >> .env
+  echo -e "\nTHEME_NAME='$REPLY'" >> .env
 fi
 
 if [[ -z "$PLUGINS_DIR" && -z "$EXTERNAL_INSTALL_DIR" ]]; then
@@ -22,13 +22,13 @@ if [[ -z "$PLUGINS_DIR" && -z "$EXTERNAL_INSTALL_DIR" ]]; then
   read
 
   if [[ "$REPLY" == 1 ]] && [[ -z "$PLUGINS_DIR" ]]; then
-    echo -e "PLUGINS_DIR='../../plugins'" >> .env
-    echo -e "EXTERNAL_INSTALL_DIR=''" >> .env
+    echo -e "\nPLUGINS_DIR='../../plugins'" >> .env
+    echo -e "\nEXTERNAL_INSTALL_DIR=''" >> .env
   elif [[ "$REPLY" == 2 ]] && [[ -z "$EXTERNAL_INSTALL_DIR" ]]; then
     echo -e "\033[34mProvide the path to where your wordpress install is:\e[0m"
     read
 
-    echo -e "PLUGINS_DIR=''" >> .env
-    echo -e "EXTERNAL_INSTALL_DIR='$REPLY'" >> .env
+    echo -e "\nPLUGINS_DIR=''" >> .env
+    echo -e "\nEXTERNAL_INSTALL_DIR='$REPLY'" >> .env
   fi
 fi
