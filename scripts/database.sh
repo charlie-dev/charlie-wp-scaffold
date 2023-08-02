@@ -49,7 +49,7 @@ if [[ $COMMAND_RUN == 'y' ]]; then
       currentHomepageID=`wp db query "SELECT option_value from wp_options WHERE option_name = 'page_on_front'" --silent --skip-column-names 2>&1`
 
       if [[ "$currentHomepageID" == "0" ]]; then
-        homepageCreated=`wp post create --post_type=page --post_status=publish --post_title=Homepage --page_template='template-home.php' --post_author=1 2>&1`
+        homepageCreated=`wp post create --post_type=page --post_status=publish --post_title=Homepage --post_author=1 2>&1`
 
         if [[ "$homepageCreated" == *"Success:"* ]]; then
           homepageID=`wp db query "SELECT ID from wp_posts WHERE post_title = 'Homepage' ORDER BY post_date DESC LIMIT 1" --silent --skip-column-names 2>&1`
@@ -89,7 +89,7 @@ if [[ $COMMAND_RUN == 'y' ]]; then
 
     # Activate default plugins required
     activate_plugins () {
-      pluginsSetSuccessfully=`wp plugin activate advanced-custom-fields-pro classic-editor duplicate-page gravityforms safe-svg gravityformscli 2>&1`
+      pluginsSetSuccessfully=`wp plugin activate advanced-custom-fields-pro classic-editor duplicate-page gravityforms safe-svg wp-smushit 2>&1`
 
       if [[ "$pluginsSetSuccessfully" == *'Success:'* ]]; then
         echo -e "\033[32mPlugins Activated Successfully\e[0m"
