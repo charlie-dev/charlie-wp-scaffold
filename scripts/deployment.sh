@@ -54,7 +54,7 @@ fi
 
 sleep 5
 
-projectFilesExist=`ssh "$server" "[ 'ls -A $destination' ] && echo 'Not Empty' || echo 'Empty'"`
+projectFilesExist=`ssh "$server" "[ -n \"\$(ls -A $destination 2>/dev/null)\" ] && echo 'Not Empty' || echo 'Empty'"`
 wpCliExists=`ssh "$server" "command -v wp > /dev/null && echo 'true' ||  echo 'false'"`
 
 if [ "$projectFilesExist" == "Empty" ]; then
