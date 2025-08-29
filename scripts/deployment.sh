@@ -116,9 +116,9 @@ echo "Copying Theme and Plugin Zips To Server via SCP..."
 echo "**************************************************"
 
 # Copy theme and plugin zips to server
-scp -rp ~/clone/wp-content/theme.zip "$server:$destination/wp-content/themes"
+scp -rp -O ~/clone/wp-content/theme.zip "$server:$destination/wp-content/themes"
 sleep 10
-scp -rp ~/clone/wp-content/plugins.zip "$server:$destination/wp-content/"
+scp -rp -O ~/clone/wp-content/plugins.zip "$server:$destination/wp-content/"
 echo "Done..."
 
 # Create theme folder on destination server if it doesn't exist
